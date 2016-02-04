@@ -9,27 +9,9 @@ namespace SepticV2
     class Item
     {
         public bool show;
-        private string descripRule = "";
-        private string actionRule = "";
         public List<string> descriptor;
         public List<string> action;
         private string name;
-
-        /*public string Name
-        {
-            get
-            {
-                return name; 
-            }
-            set
-            {
-                if (value == "")
-                {
-                    name = "potato";
-                }
-                else name = value;
-            }
-        }*/
 
         public Item(string name)
         {
@@ -45,20 +27,22 @@ namespace SepticV2
 
         public string ConcatinateDescrip()
         {
-            foreach(string element in this.descriptor)
+            var descripRule = "";
+            foreach (string element in this.descriptor)
             {
-                this.descripRule = descripRule + element + "\n";              
+                descripRule = descripRule + element + "\n";           
             }
-            return (this.descripRule);
+            return (descripRule);
         }
 
         public string ConcatinateAction()
         {
+            var actionRule = "";
             foreach(string element in this.action)
             {
-                this.actionRule = actionRule + element + "\n";
+                actionRule = actionRule + element + "\n";
             }
-            return (this.actionRule);
+            return (actionRule);
         }
     }
 }

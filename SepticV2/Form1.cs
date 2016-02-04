@@ -317,6 +317,7 @@ namespace SepticV2
             }
             MessageBox.Show(testString);
             testString = "";
+            testList.Clear();
         }
 
         private void saveButton_Click(object sender, EventArgs e)
@@ -337,6 +338,7 @@ namespace SepticV2
             }
             WriteToFile.write(testString);
             testString = "";
+            testList.Clear();
         }
     }
 }
