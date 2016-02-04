@@ -9,10 +9,12 @@ namespace SepticV2
     class WriteToFile
     {
         public static void write(string toWrite) {
+            var pathtofile = @"%userprofile%\Documents\My Games\Path of Exile\Doober.Filter";
+            var filepath = Environment.ExpandEnvironmentVariables(pathtofile);
             using (System.IO.StreamWriter file =
-           new System.IO.StreamWriter(@"C:\Users\Public\TestFolder\WriteLines2.txt"))
+           new System.IO.StreamWriter(filepath))
             {
-               file.WriteLine("Anything");
+               file.WriteLine(toWrite);
             }
       }
    }
