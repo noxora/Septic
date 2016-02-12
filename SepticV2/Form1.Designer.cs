@@ -52,6 +52,9 @@
             this.actionLB = new System.Windows.Forms.ListBox();
             this.testButton = new System.Windows.Forms.Button();
             this.saveButton = new System.Windows.Forms.Button();
+            this.descripRemoveButton = new System.Windows.Forms.Button();
+            this.removeActionButton = new System.Windows.Forms.Button();
+            this.ruleRemoveButton = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.actiongb.SuspendLayout();
             this.SuspendLayout();
@@ -255,7 +258,7 @@
             // 
             this.descripLB.FormattingEnabled = true;
             this.descripLB.ItemHeight = 16;
-            this.descripLB.Location = new System.Drawing.Point(12, 187);
+            this.descripLB.Location = new System.Drawing.Point(12, 190);
             this.descripLB.Name = "descripLB";
             this.descripLB.Size = new System.Drawing.Size(516, 100);
             this.descripLB.TabIndex = 7;
@@ -264,7 +267,7 @@
             // 
             this.actionLB.FormattingEnabled = true;
             this.actionLB.ItemHeight = 16;
-            this.actionLB.Location = new System.Drawing.Point(12, 320);
+            this.actionLB.Location = new System.Drawing.Point(13, 335);
             this.actionLB.Name = "actionLB";
             this.actionLB.Size = new System.Drawing.Size(515, 100);
             this.actionLB.TabIndex = 8;
@@ -289,11 +292,44 @@
             this.saveButton.UseVisualStyleBackColor = true;
             this.saveButton.Click += new System.EventHandler(this.saveButton_Click);
             // 
+            // descripRemoveButton
+            // 
+            this.descripRemoveButton.Location = new System.Drawing.Point(441, 296);
+            this.descripRemoveButton.Name = "descripRemoveButton";
+            this.descripRemoveButton.Size = new System.Drawing.Size(86, 26);
+            this.descripRemoveButton.TabIndex = 11;
+            this.descripRemoveButton.Text = "Remove";
+            this.descripRemoveButton.UseVisualStyleBackColor = true;
+            this.descripRemoveButton.Click += new System.EventHandler(this.descripRemoveButton_Click);
+            // 
+            // removeActionButton
+            // 
+            this.removeActionButton.Location = new System.Drawing.Point(441, 441);
+            this.removeActionButton.Name = "removeActionButton";
+            this.removeActionButton.Size = new System.Drawing.Size(82, 24);
+            this.removeActionButton.TabIndex = 12;
+            this.removeActionButton.Text = "Remove";
+            this.removeActionButton.UseVisualStyleBackColor = true;
+            this.removeActionButton.Click += new System.EventHandler(this.removeActionButton_Click);
+            // 
+            // ruleRemoveButton
+            // 
+            this.ruleRemoveButton.Location = new System.Drawing.Point(441, 155);
+            this.ruleRemoveButton.Name = "ruleRemoveButton";
+            this.ruleRemoveButton.Size = new System.Drawing.Size(85, 26);
+            this.ruleRemoveButton.TabIndex = 13;
+            this.ruleRemoveButton.Text = "Remove";
+            this.ruleRemoveButton.UseVisualStyleBackColor = true;
+            this.ruleRemoveButton.Click += new System.EventHandler(this.ruleRemoveButton_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1024, 477);
+            this.Controls.Add(this.ruleRemoveButton);
+            this.Controls.Add(this.removeActionButton);
+            this.Controls.Add(this.descripRemoveButton);
             this.Controls.Add(this.saveButton);
             this.Controls.Add(this.testButton);
             this.Controls.Add(this.actionLB);
@@ -340,6 +376,9 @@
         private System.Windows.Forms.Label sizeL;
         private System.Windows.Forms.Button testButton;
         private System.Windows.Forms.Button saveButton;
+        private System.Windows.Forms.Button descripRemoveButton;
+        private System.Windows.Forms.Button removeActionButton;
+        private System.Windows.Forms.Button ruleRemoveButton;
     }
 }
 

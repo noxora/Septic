@@ -219,20 +219,24 @@ namespace SepticV2
         {
             descripLB.Items.Clear();
             actionLB.Items.Clear();
-            Item temp = RuleListLB.SelectedItem as Item;
-            foreach (string element in temp.descriptor){
-                descripLB.Items.Add(element);
-            }
-            foreach (string element in temp.action)
+            if (RuleListLB.SelectedItem != null)
             {
-                actionLB.Items.Add(element);
+                Item temp = RuleListLB.SelectedItem as Item;
+                foreach (string element in temp.descriptor)
+                {
+                    descripLB.Items.Add(element);
+                }
+                foreach (string element in temp.action)
+                {
+                    actionLB.Items.Add(element);
+                }
+                descripCB.Enabled = true;
+                compareCB.Enabled = true;
+                specificCB.Enabled = true;
+                actionCB.Enabled = true;
+                addDescripButton.Enabled = true;
+                addActionButton.Enabled = true;
             }
-            descripCB.Enabled = true;
-            compareCB.Enabled = true;
-            specificCB.Enabled = true;
-            actionCB.Enabled = true;
-            addDescripButton.Enabled = true;
-            addActionButton.Enabled = true;
         }
 
         private void actionCB_SelectedIndexChanged(object sender, EventArgs e)
@@ -339,6 +343,28 @@ namespace SepticV2
             WriteToFile.write(testString);
             testString = "";
             testList.Clear();
+        }
+
+        private void descripRemoveButton_Click(object sender, EventArgs e)
+        {
+            Item temp = RuleListLB.SelectedItem as Item;
+            temp.descriptor.Remove(descripLB.SelectedItem.ToString());
+            descripLB.Items.Remove(descripLB.SelectedItem);         
+        }
+
+        private void removeActionButton_Click(object sender, EventArgs e)
+        {
+            Item temp = RuleListLB.SelectedItem as Item;
+            temp.descriptor.Remove(actionLB.SelectedItem.ToString());
+            actionLB.Items.Remove(actionLB.SelectedItem);
+        }
+
+        private void ruleRemoveButton_Click(object sender, EventArgs e)
+        {
+            Item temp = RuleListLB.SelectedItem as Item;
+            ruleList.Remove(temp);
+            RuleListLB.Items.Remove(RuleListLB.SelectedItem);
+
         }
     }
 }
