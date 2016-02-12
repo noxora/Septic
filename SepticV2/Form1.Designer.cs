@@ -55,6 +55,7 @@
             this.descripRemoveButton = new System.Windows.Forms.Button();
             this.removeActionButton = new System.Windows.Forms.Button();
             this.ruleRemoveButton = new System.Windows.Forms.Button();
+            this.saveButton2 = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.actiongb.SuspendLayout();
             this.SuspendLayout();
@@ -322,11 +323,22 @@
             this.ruleRemoveButton.UseVisualStyleBackColor = true;
             this.ruleRemoveButton.Click += new System.EventHandler(this.ruleRemoveButton_Click);
             // 
+            // saveButton2
+            // 
+            this.saveButton2.Location = new System.Drawing.Point(811, 378);
+            this.saveButton2.Name = "saveButton2";
+            this.saveButton2.Size = new System.Drawing.Size(64, 42);
+            this.saveButton2.TabIndex = 14;
+            this.saveButton2.Text = "Test Save";
+            this.saveButton2.UseVisualStyleBackColor = true;
+            this.saveButton2.Click += new System.EventHandler(this.saveButton2_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1024, 477);
+            this.Controls.Add(this.saveButton2);
             this.Controls.Add(this.ruleRemoveButton);
             this.Controls.Add(this.removeActionButton);
             this.Controls.Add(this.descripRemoveButton);
@@ -379,6 +391,7 @@
         private System.Windows.Forms.Button descripRemoveButton;
         private System.Windows.Forms.Button removeActionButton;
         private System.Windows.Forms.Button ruleRemoveButton;
+        private System.Windows.Forms.Button saveButton2;
     }
 }
 

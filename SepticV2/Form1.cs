@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
 
 namespace SepticV2
 {
@@ -346,6 +347,7 @@ namespace SepticV2
         }
 
         private void descripRemoveButton_Click(object sender, EventArgs e)
+            //Removes the selected Item from the descripLB and the item's descriptor list
         {
             Item temp = RuleListLB.SelectedItem as Item;
             temp.descriptor.Remove(descripLB.SelectedItem.ToString());
@@ -353,6 +355,7 @@ namespace SepticV2
         }
 
         private void removeActionButton_Click(object sender, EventArgs e)
+        //Removes the selected Item from the actionLB and the item's action list
         {
             Item temp = RuleListLB.SelectedItem as Item;
             temp.descriptor.Remove(actionLB.SelectedItem.ToString());
@@ -360,11 +363,50 @@ namespace SepticV2
         }
 
         private void ruleRemoveButton_Click(object sender, EventArgs e)
+            //Removes the Rule from the rulelist and RulelistLB
         {
             Item temp = RuleListLB.SelectedItem as Item;
             ruleList.Remove(temp);
             RuleListLB.Items.Remove(RuleListLB.SelectedItem);
 
+        }
+
+        private void saveButton2_Click(object sender, EventArgs e)
+            //Trying to implement a way for the user to save the filter in their chosen place
+        {
+            foreach (Item element in ruleList)
+            {
+                descripRule = descripRule + element.ConcatinateDescrip();
+                actionRule = actionRule + element.ConcatinateAction();
+                testList.Add("Show\n" + descripRule + actionRule);
+                descripRule = "";
+                actionRule = "";
+            }
+            foreach (string element in testList)
+            {
+                testString = testString + element;
+            }
+            Stream myStream;
+            SaveFileDialog saveFileDialog1 = new SaveFileDialog();
+            
+            saveFileDialog1.Filter = "Filter Files |(*.filter)";
+            saveFileDialog1.FilterIndex = 2;
+            saveFileDialog1.RestoreDirectory = true;
+
+            if (saveFileDialog1.ShowDialog() == DialogResult.OK)
+            {
+                if ((myStream = saveFileDialog1.OpenFile()) != null)
+                {
+                    myStream.Close();
+                    string pathtofile;
+                    pathtofile = saveFileDialog1.FileName.ToString();
+                    MessageBox.Show(pathtofile);
+                    WriteToFile2.write(testString, pathtofile);         
+                    testString = "";
+                    testList.Clear();
+
+                }
+            }
         }
     }
 }
